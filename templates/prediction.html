@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ app_name }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', path='style_prediction.css') }}">
+
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <!-- Bouton de déconnexion -->
+        <button class="logout-btn" onclick="window.location.href='/'">⬅ Déconnexion</button>
+
+        <div class="logo-container">
+            <img src="{{ url_for('static', path='om.png') }}" alt="Logo" class="logo">
+            <h1>4B INDUSTRY</h1>
+        </div>
+
+        <!-- Utilisateur connecté avec un rond vert -->
+        <div class="user-info">
+            <span class="status-circle"></span>
+            <span class="username">{{pseudo}} connecté</span>
+        </div>
+    </header>
+
+    <main>
+        <div class="form-container">
+            <!-- Menu déroulant pour Marque -->
+            <div class="dropdown">
+                <label for="marque">Marque :</label>
+                <select id="marque">
+                    <option value="marque1">Marque 1</option>
+                    <option value="marque2">Marque 2</option>
+                    <option value="marque3">Marque 3</option>
+                    <option value="marque4">Marque 4</option>
+                </select>
+            </div>
+    
+            <!-- Menu déroulant pour Année -->
+            <div class="dropdown">
+                <label for="annee">Année :</label>
+                <select id="annee">
+                    <option value="2020">2020</option>
+                    <option value="2021">2021</option>
+                    <option value="2022">2022</option>
+                    <option value="2023">2023</option>
+                </select>
+            </div>
+    
+            <!-- Menu déroulant pour Carburant -->
+            <div class="dropdown">
+                <label for="carburant">Carburant :</label>
+                <select id="carburant">
+                    <option value="essence">Essence</option>
+                    <option value="diesel">Diesel</option>
+                    <option value="electrique">Electrique</option>
+                </select>
+            </div>
+    
+            <!-- Menu déroulant pour Modèle -->
+            <div class="dropdown">
+                <label for="modele">Modèle :</label>
+                <select id="modele">
+                    <option value="modele1">Modèle 1</option>
+                    <option value="modele2">Modèle 2</option>
+                    <option value="modele3">Modèle 3</option>
+                    <option value="modele4">Modèle 4</option>
+                </select>
+            </div>
+    
+            <!-- Bouton Prédire -->
+            <button class="predire-btn" onclick="window.location.href='/resultat'">Prédire</button>
+        </div>
+    </main>
+    
+
+    <footer>
+        <p><a href="/mentions-legales">Mentions légales</a></p>
+    </footer>
+
+</body>
+</html>

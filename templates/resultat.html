@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ app_name }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', path='style_resultat.css') }}">
+
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <!-- Bouton de déconnexion -->
+        <button class="logout-btn" onclick="window.location.href='/'">⬅ Déconnexion</button>
+
+        <div class="logo-container">
+            <img src="{{ url_for('static', path='om.png') }}" alt="Logo" class="logo">
+            <h1>4B INDUSTRY</h1>
+        </div>
+
+        <!-- Utilisateur connecté avec un rond vert -->
+        <div class="user-info">
+            <span class="status-circle"></span>
+            <span class="username">{{pseudo}} connecté</span>
+        </div>
+    </header>
+    
+    <main>
+        <section class="info-selection">
+            <div class="info-box">
+                <label for="marque">Marque</label>
+                <div id="marque">Marque de la voiture</div>
+            </div>
+            <div class="info-box">
+                <label for="modele">Modèle</label>
+                <div id="modele">Modèle de la voiture</div>
+            </div>
+            <div class="info-box">
+                <label for="annee">Année</label>
+                <div id="annee">Année de fabrication</div>
+            </div>
+            <div class="info-box">
+                <label for="carburant">Carburant</label>
+                <div id="carburant">Type de carburant</div>
+            </div>
+        </section>
+    
+        <div class="price-container">
+            <div class="price-box">
+                <label for="prix">Prix Estimé :</label>
+                <div class="price">€12,345</div> <!-- Valeur du prix, vous pouvez la modifier avec Jinja2 -->
+            </div>
+        </div>
+    
+        <div class="car-photo-container">
+            <label for="car-photo">Photo de la voiture :</label>
+            <div class="car-photo-frame">
+                <img src="{{ url_for('static', path='om.png') }}" alt="Logo" class="logo">
+            </div>
+        </div>
+        
+    </main>
+    
+    <footer>
+        <p><a href="/mentions-legales">Mentions légales</a></p>
+    </footer>
+
+</body>
+</html>

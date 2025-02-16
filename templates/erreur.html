@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Erreur - {{ app_name }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', path='style_erreur.css') }}">
+</head>
+
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="{{ url_for('static', path='om.png') }}" alt="Logo" class="logo">
+            <h1>{{ app_name }}</h1>
+        </div>
+    </header>
+
+    <main>
+        <h1>Erreur</h1>
+        <p>Une erreur est survenue. Veuillez essayer à nouveau plus tard.</p>
+        <div class="button-container">
+            <button onclick="window.location.href='/'">Retour à l'accueil</button>
+        </div>
+    </main>
+
+    <footer>
+        <p><a href="/mentions-legales">Mentions légales</a></p>
+    </footer>
+</body>
+</html>

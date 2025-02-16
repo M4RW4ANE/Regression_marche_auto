@@ -1,0 +1,132 @@
+/* Styles généraux pour toute la page */
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+    height: 100vh;
+    background: linear-gradient(135deg, #4bc5c5, #e4e152); /* Dégradé de couleurs vives */
+    background-size: 400% 400%;
+    animation: gradientShift 10s ease infinite;
+}
+
+/* Animation pour un fond dynamique */
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Header */
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 20vh; /* Hauteur du header */
+    margin-bottom: 5px; /* Réduit l'espace entre le header et le main */
+}
+
+header h1 {
+    font-size: 2rem; /* Taille du titre */
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 0 0 10px rgba(40, 197, 189, 0.8);
+    color: rgb(255, 255, 255);
+    margin-top: 10px;
+    margin-bottom: 5px; /* Réduit l'espace sous le titre */
+}
+
+/* Logo */
+header .logo-container img {
+    width: 80px; /* Réduit la taille du logo */
+    height: auto; /* Assure que la hauteur reste proportionnelle */
+}
+
+/* Main */
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+    margin-top: 0; /* Réduit l'espace au-dessus du main */
+}
+
+/* Bouton Précédent */
+.back-button {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    background-color: #00c6ff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+}
+
+.back-button:hover {
+    transform: scale(1.1);
+    background-color: #ff005c;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+/* Main */
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centre horizontalement */
+    justify-content: center; /* Centre verticalement */
+    text-align: center; /* Centre le texte */
+    padding: 20px;
+}
+
+main h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 0 0 10px rgba(24, 21, 179, 0.8);
+    color: rgb(24, 41, 187);
+    margin-bottom: 10px; /* Réduit l'espace sous le titre des mentions légales */
+    margin-top: 1px; /* Réduit l'espace au-dessus */
+}
+
+/* Texte des mentions légales */
+main p {
+    font-size: 1.2rem;
+    color: rgb(7, 19, 179);
+    line-height: 1.8;
+    max-width: 80%;
+    text-align: justify;
+    background: rgba(255, 255, 255, 0.7);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/* Footer */
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    color: white;
+    font-size: 1rem;
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.7);
+    background-color: rgba(0, 0, 0, 0.6); /* Fond semi-transparent pour le footer */
+    padding: 10px 0;
+}

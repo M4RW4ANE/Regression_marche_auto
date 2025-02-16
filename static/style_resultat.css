@@ -1,0 +1,262 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Assure que la hauteur minimale de la page est 100% */
+    background: linear-gradient(135deg, #4bc5c5, #e4e152);
+    background-size: 400% 400%;
+    animation: gradientShift 10s ease infinite;
+}
+
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    text-align: center;
+    height: 10vh;
+    margin-top: 10px;
+}
+
+header img {
+    width: 200px;
+    height: auto;
+    border-radius: 50%;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.7);
+    margin-top: 20px;
+}
+
+header h1 {
+    margin-top: 20px;
+    font-size: 2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: #ffffff;
+    text-shadow: 0 0 15px rgba(0, 198, 255, 0.8), 0 0 25px rgba(255, 0, 92, 0.8);
+    animation: glow 2s ease-in-out infinite;
+}
+
+@keyframes glow {
+    0% {
+        text-shadow: 0 0 10px rgba(0, 198, 255, 0.6), 0 0 20px rgba(255, 0, 92, 0.6);
+    }
+    50% {
+        text-shadow: 0 0 30px rgba(0, 198, 255, 1), 0 0 50px rgba(255, 0, 92, 1);
+    }
+    100% {
+        text-shadow: 0 0 10px rgba(0, 198, 255, 0.6), 0 0 20px rgba(255, 0, 92, 0.6);
+    }
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    right: 20px;
+}
+
+.status-circle {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: green;
+    margin-right: 5px;
+}
+
+.username {
+    font-size: 20px;
+    color: #333;
+}
+
+.logout-btn {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    padding: 10px 25px;
+    font-size: 1rem;
+    background-color: #00c6ff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+}
+
+.logout-btn:hover {
+    transform: scale(1.1);
+    background-color: #ff005c;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+/* Styles généraux pour les labels */
+label {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #1e1bc0;  /* Changement de la couleur des labels en bleu */
+    margin-bottom: 10px;
+    display: block;
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+/* Styles de la classe .info-box */
+.info-box {
+    background-color: rgba(255, 255, 255, 0.9); /* Légère transparence */
+    padding: 30px 40px; /* Réduire le padding */
+    border-radius: 10px; /* Bordures arrondies */
+    width: 18%; /* Réduire la largeur de la box */
+    margin: 120px 10px; /* Réduire la marge pour remonter les boxes */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Ombre plus légère */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* Style du texte dans .info-box */
+.info-box div {
+    font-size: 1.2rem; /* Réduction de la taille du texte */
+    font-weight: 700;
+    color: #333;
+    margin-top: 5px; /* Réduction de l'espacement entre le titre et le texte */
+    text-align: center;
+}
+
+/* Styles supplémentaires pour rendre les 4 cases horizontales */
+.info-selection {
+    display: flex;
+    justify-content: space-evenly;  /* Espacement égal entre les cases */
+    margin-bottom: 250px; /* Espacement entre les cases */
+}
+
+/* Amélioration de l'alignement et de la réactivité */
+@media screen and (max-width: 768px) {
+    .info-selection {
+        flex-direction: column; /* Passer en colonne sur petit écran */
+        align-items: center;
+    }
+    
+    .info-box {
+        width: 70%; /* Réduire la largeur sur petit écran */
+        margin-bottom: 150px; /* Espacement vertical plus grand */
+    }
+}
+
+/* Label pour le prix */
+.price-container label {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #00c6ff;  /* Bleu clair */
+    margin-bottom: 10px;
+    display: block;
+    letter-spacing: 1px;
+}
+
+/* Container pour la case prix */
+.price-container {
+    margin-top: 10px; /* Réduire l'espace au-dessus */
+    text-align: center;
+    position: relative;  /* Position relative pour manipuler le déplacement */
+    top: -350px; /* Remonter la case encore plus (ajustez selon vos besoins) */
+}
+
+/* Style de la box de prix */
+.price-box {
+    background-color: rgba(255, 255, 255, 0.9); /* Fond légèrement transparent */
+    padding: 20px 30px; /* Réduire le padding */
+    border-radius: 12px; /* Coins arrondis */
+    width: 18%; /* Réduire la taille de la box */
+    margin: 10px auto; /* Réduire l'espacement entre les éléments */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Ombre nette */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* Affichage du prix */
+.price {
+    font-size: 1.5rem; /* Réduire la taille du texte du prix */
+    font-weight: 800; /* Texte en gras */
+    color: #00c6ff;  /* Bleu clair */
+    text-shadow: 0 0 10px rgba(0, 198, 255, 0.7);
+}
+
+/* Effet au survol de la box */
+.price-box:hover {
+    transform: scale(1.05);  /* Agrandir légèrement la box au survol */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); /* Ombre plus marquée */
+}
+
+
+/* Container pour la photo de la voiture */
+.car-photo-container {
+    margin-top: -350px; /* Augmenter l'espacement pour descendre la photo */
+    text-align: center;
+}
+
+/* Frame pour la photo */
+.car-photo-frame {
+    width: 60%; /* Réduire la largeur du cadre à 60% */
+    max-width: 400px; /* Réduire la largeur maximale du cadre */
+    margin: 10px auto; /* Centrer le cadre et réduire l'espacement */
+    padding: 10px;
+    border: 5px solid #00c6ff; /* Bordure bleue */
+    border-radius: 15px; /* Coins arrondis */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Ombre */
+    background-color: rgba(255, 255, 255, 0.8); /* Fond blanc légèrement transparent */
+    text-align: center; /* Centrer l'image dans le cadre */
+}
+
+/* Style de l'image */
+.car-photo-frame img {
+    width: 80%; /* Réduire la taille de l'image à 80% de la largeur du cadre */
+    height: auto; /* Maintenir le ratio de l'image */
+    border-radius: 10px; /* Coins arrondis de l'image */
+    transition: transform 0.3s ease-in-out; /* Effet de transition */
+}
+
+/* Effet au survol de l'image */
+.car-photo-frame img:hover {
+    transform: scale(1.05); /* Agrandir légèrement l'image au survol */
+}
+
+
+footer {
+    width: 100%;
+    text-align: center;
+    color: white;
+    font-size: 1rem;
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.7);
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 10px 0;
+    position: fixed;   /* Position fixée */
+    bottom: 0;         /* Fixer au bas de la page */
+    left: 0;           /* Aligner à gauche */
+    z-index: 10;       /* S'assurer que le footer soit au-dessus des autres éléments */
+}
+
+
+footer a {
+    color: #00c6ff;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: #ff005c;
+} 

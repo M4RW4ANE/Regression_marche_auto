@@ -1,0 +1,245 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(135deg, #4bc5c5, #e4e152);
+    background-size: 400% 400%;
+    animation: gradientShift 10s ease infinite;
+}
+
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    text-align: center;
+    height: 10vh;
+    margin-top: 10px;
+}
+
+header img {
+    width: 200px;
+    height: auto;
+    border-radius: 50%;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.7);
+    margin-top: 20px;
+}
+
+header h1 {
+    margin-top: 20px;
+    font-size: 2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: #ffffff;
+    text-shadow: 0 0 15px rgba(0, 198, 255, 0.8), 0 0 25px rgba(255, 0, 92, 0.8);
+    animation: glow 2s ease-in-out infinite;
+}
+
+@keyframes glow {
+    0% {
+        text-shadow: 0 0 10px rgba(0, 198, 255, 0.6), 0 0 20px rgba(255, 0, 92, 0.6);
+    }
+    50% {
+        text-shadow: 0 0 30px rgba(0, 198, 255, 1), 0 0 50px rgba(255, 0, 92, 1);
+    }
+    100% {
+        text-shadow: 0 0 10px rgba(0, 198, 255, 0.6), 0 0 20px rgba(255, 0, 92, 0.6);
+    }
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    right: 20px;
+}
+
+.status-circle {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: green;
+    margin-right: 5px;
+}
+
+.username {
+    font-size: 20px;
+    color: #333;
+}
+
+.logout-btn {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    padding: 10px 25px;
+    font-size: 1rem;
+    background-color: #00c6ff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+}
+
+.logout-btn:hover {
+    transform: scale(1.1);
+    background-color: #ff005c;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+/* Main (texte et filtres centrés vers le bas) */
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start; /* Toujours garder les éléments vers le haut */
+    height: calc(100vh - 200px); /* Ajuste la taille de la page moins l'espace du header */
+    text-align: center;
+    padding-top: 50px; /* Espacement entre le header et les filtres */
+    padding-bottom: 80px;
+}
+
+/* Conteneur des filtres pour Marque et Carburant */
+.filters {
+    display: flex;
+    justify-content: center; /* Centre les filtres horizontalement */
+    align-items: center; /* Centre les filtres verticalement */
+    gap: 30px; /* Espacement entre les filtres */
+    margin-top: 50px; /* Ajuste la position des filtres plus bas */
+    width: 100%;
+    max-width: 800px; /* Limite la largeur des filtres pour plus de lisibilité */
+}
+
+/* Style des menus déroulants */
+select {
+    padding: 8px 20px; /* Réduit un peu l'espace intérieur */
+    font-size: 1rem;
+    border: 2px solid #00c6ff; /* Contour bleu */
+    border-radius: 0; /* Coins carrés */
+    background-color: #fff;
+    color: #333;
+    width: 200px; /* Limite la largeur des menus */
+    cursor: pointer;
+    box-sizing: border-box;
+    text-align: left; /* Aligne les options à gauche */
+}
+
+/* Focus sur le select */
+select:focus {
+    outline: none; /* Enlève le contour par défaut */
+    border-color: #ff005c; /* Contour rouge lors du focus */
+}
+
+/* Pour les filtres carrés */
+.filter {
+    padding: 15px 20px;
+    font-size: 1rem;
+    font-weight: 500;
+    border-radius: 0px; /* Coins carrés */
+    border: 2px solid #00c6ff; /* Contour bleu */
+    width: 200px;
+    background-color: #fff;
+    color: #333;
+    transition: all 0.3s ease; /* Animation fluide pour l'effet focus */
+}
+
+/* Animation du focus sur les filtres */
+.filter:focus {
+    border-color: #ff005c; /* Changement de bordure lors du focus */
+    background-color: #f1faff; /* Fond bleu clair au focus */
+    box-shadow: 0 4px 12px rgba(0, 198, 255, 0.3); /* Ombre lors du focus */
+}
+
+/* Conteneur spécifique pour le menu déroulant "Année" */
+.filters-annee {
+    display: flex;
+    justify-content: center; /* Centre le filtre "Année" horizontalement */
+    margin-top: 30px; /* Espacement entre les filtres Marque/Carburant et l'année */
+    width: 100%;
+    max-width: 800px; /* Garde la même largeur que les autres filtres */
+}
+
+/* Élargir le menu déroulant "Année" */
+.filters-annee select {
+    width: 100%; /* Prend toute la largeur disponible */
+    max-width: 420px; /* Limite la largeur du menu déroulant "Année" */
+    margin-top: 0; /* Ajuste le placement du menu déroulant "Année" */
+}
+
+/* Si tu veux un espacement supplémentaire entre tous les menus */
+.filters select {
+    margin-top: 30px; /* Décale tous les menus vers le bas */
+}
+
+.chart-container {
+    background-color: white;
+    width: 95%; /* Augmenter la largeur à 95% pour prendre encore plus d'espace */
+    max-width: 1200px; /* Augmenter la largeur maximale */
+    margin: 30px auto; /* Centrer le graphique */
+    padding: 30px; /* Plus de padding pour donner de l'espace autour du graphique */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    height: 700px; /* Augmenter encore la hauteur du graphique */
+}
+
+
+/* Style du bouton "Prédire" */
+.predict-btn {
+    padding: 10px 25px;
+    font-size: 1rem;
+    background-color: #00c6ff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+    margin-top: 30px; /* Espacement entre le graphique et le bouton */
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.predict-btn:hover {
+    transform: scale(1.1);
+    background-color: #ff005c;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+
+footer {
+    position: relative;
+    width: 100%;
+    text-align: center;
+    color: white;
+    font-size: 1rem;
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.7);
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 10px 0;
+}
+
+footer a {
+    color: #00c6ff;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: #ff005c;
+}

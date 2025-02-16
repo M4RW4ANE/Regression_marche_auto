@@ -1,0 +1,194 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Assure que la hauteur minimale de la page est 100% */
+    background: linear-gradient(135deg, #4bc5c5, #e4e152);
+    background-size: 400% 400%;
+    animation: gradientShift 10s ease infinite;
+}
+
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    text-align: center;
+    height: 10vh;
+    margin-top: 10px;
+}
+
+header img {
+    width: 200px;
+    height: auto;
+    border-radius: 50%;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.7);
+    margin-top: 20px;
+}
+
+header h1 {
+    margin-top: 20px;
+    font-size: 2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: #ffffff;
+    text-shadow: 0 0 15px rgba(0, 198, 255, 0.8), 0 0 25px rgba(255, 0, 92, 0.8);
+    animation: glow 2s ease-in-out infinite;
+}
+
+@keyframes glow {
+    0% {
+        text-shadow: 0 0 10px rgba(0, 198, 255, 0.6), 0 0 20px rgba(255, 0, 92, 0.6);
+    }
+    50% {
+        text-shadow: 0 0 30px rgba(0, 198, 255, 1), 0 0 50px rgba(255, 0, 92, 1);
+    }
+    100% {
+        text-shadow: 0 0 10px rgba(0, 198, 255, 0.6), 0 0 20px rgba(255, 0, 92, 0.6);
+    }
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    right: 20px;
+}
+
+.status-circle {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: green;
+    margin-right: 5px;
+}
+
+.username {
+    font-size: 20px;
+    color: #333;
+}
+
+.logout-btn {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    padding: 10px 25px;
+    font-size: 1rem;
+    background-color: #00c6ff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+}
+
+.logout-btn:hover {
+    transform: scale(1.1);
+    background-color: #ff005c;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+/* Style pour le main et les menus déroulants */
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 50px;
+    text-align: center;
+    flex: 1;
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px; /* Espacement entre les éléments */
+    align-items: center;
+}
+
+.dropdown {
+    width: 300px; /* Largeur des menus déroulants */
+}
+
+label {
+    font-size: 1.1rem;
+    color: #333;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+select {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border: 2px solid #00c6ff;
+    border-radius: 8px;
+    background-color: #fff;
+    color: #333;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+
+select:hover {
+    border: 2px solid #ff005c;
+    box-shadow: 0 4px 8px rgba(255, 0, 92, 0.3);
+}
+
+/* Style du bouton Prédire */
+.predire-btn {
+    padding: 10px 25px;
+    font-size: 1.2rem;
+    background-color: #00c6ff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease;
+}
+
+.predire-btn:hover {
+    transform: scale(1.1);
+    background-color: #ff005c;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+/* Footer */
+footer {
+    width: 100%;
+    text-align: center;
+    color: white;
+    font-size: 1rem;
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.7);
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 10px 0;
+    position: relative;
+}
+
+footer a {
+    color: #00c6ff;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: #ff005c;
+}
+

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connexion - {{ app_name }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', path='style_login.css') }}">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo-container">
+            <img src="{{ url_for('static', path='om.png') }}" alt="Logo" class="logo">
+            <h1>{{ app_name }}</h1>
+        </div>
+    </header>
+
+    <!-- Formulaire de connexion -->
+    <main>
+        <div class="login-container">
+            <h2>Connexion</h2>
+            <form action="/connexion" method="post">
+                <label for="login">Login</label>
+                <input type="text" id="login" name="login" placeholder="Entrez votre login" required>
+                
+                <label for="password">Mot de passe</label>
+                <input type="password" id="password" name="password" placeholder="Entrez votre mot de passe" required>
+                
+                <button type="submit">Se connecter</button>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <p><a href="/mentions-legales">Mentions légales</a></p>
+    </footer>
+</body>
+</html>

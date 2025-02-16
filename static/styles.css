@@ -1,0 +1,159 @@
+/* Appliquer un dégradé de couleurs animé en fond */
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+    height: 100vh;
+    background: linear-gradient(135deg, #4bc5c5, #e4e152); /* Dégradé coloré */
+    background-size: 400% 400%;
+    animation: gradientShift 10s ease infinite; /* Animation du fond */
+}
+
+/* Animation pour un effet dynamique du fond */
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Header */
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    text-align: center;
+    height: 40vh;
+    margin-top: 20px; /* Réduit la valeur pour remonter encore plus */
+}
+
+
+/* Logo */
+header img {
+    width: 400px; /* Augmenté de 180px à 220px */
+    height: auto;
+    border-radius: 50%;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.7);
+    margin-top: 20px; /* Garde l'espace ajouté pour descendre */
+}
+
+/* Titre sous le logo */
+header h1 {
+    margin-top: 20px; /* Ajustement pour descendre un peu le texte */
+    font-size: 3rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 3px; /* Espacement des lettres légèrement augmenté */
+    color: #ffffff; /* Blanc lumineux */
+    text-shadow: 0 0 15px rgba(0, 198, 255, 0.8), 0 0 25px rgba(255, 0, 92, 0.8); /* Ombres dynamiques et colorées */
+    animation: glow 2s ease-in-out infinite; /* Animation d'halo lumineux */
+}
+
+/* Animation pour un effet lumineux dynamique */
+@keyframes glow {
+    0% {
+        text-shadow: 0 0 10px rgba(0, 198, 255, 0.6), 0 0 20px rgba(255, 0, 92, 0.6);
+    }
+    50% {
+        text-shadow: 0 0 30px rgba(0, 198, 255, 1), 0 0 50px rgba(255, 0, 92, 1);
+    }
+    100% {
+        text-shadow: 0 0 10px rgba(0, 198, 255, 0.6), 0 0 20px rgba(255, 0, 92, 0.6);
+    }
+}
+
+
+/* Main (texte et bouton centrés) */
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: calc(100vh - 200px); /* La taille de la page moins l'espace du header */
+    text-align: center;
+    padding-top: 50px; /* Espacement entre le header et le texte */
+    padding-bottom: 80px; /* Ajuste cette valeur selon la hauteur de ton footer */
+}
+
+/* Texte */
+main p {
+    font-size: 1.5rem;
+    color: rgb(7, 19, 179); /* Bleu dynamique */
+    margin-bottom: 30px; /* Espacement entre le texte et le bouton */
+    text-align: center; /* Centrer le texte */
+    font-weight: 500; /* Texte légèrement gras pour plus d'impact */
+    text-shadow: 0 0 10px rgba(0, 198, 255, 0.8), 0 0 20px rgba(255, 0, 92, 0.7); /* Ombre lumineuse */
+    animation: glowText 3s ease-in-out infinite; /* Animation de l'effet lumineux */
+}
+
+/* Animation pour un effet lumineux sur le texte */
+@keyframes glowText {
+    0% {
+        text-shadow: 0 0 8px rgba(0, 198, 255, 0.6), 0 0 16px rgba(255, 0, 92, 0.6);
+    }
+    50% {
+        text-shadow: 0 0 20px rgba(0, 198, 255, 1), 0 0 40px rgba(255, 0, 92, 1);
+    }
+    100% {
+        text-shadow: 0 0 8px rgba(0, 198, 255, 0.6), 0 0 16px rgba(255, 0, 92, 0.6);
+    }
+}
+
+
+/* Bouton */
+button {
+    padding: 12px 30px;
+    font-size: 1.2rem;
+    background-color: #00c6ff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+}
+
+button:hover {
+    transform: scale(1.1);
+    background-color: #ff005c;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+
+/* Image de la voiture */
+.car-image {
+    width: 400px;  /* Ajuster la taille */
+    height: auto;   /* Conserver les proportions de l'image */
+    display: block; /* Pour s'assurer qu'elle s'affiche sur une ligne séparée */
+    margin-bottom: 20px; /* Espacement entre l'image et le texte */
+}
+
+/* Footer */
+footer {
+    position: relative;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    color: white;
+    font-size: 1rem;
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.7);
+    background-color: rgba(0, 0, 0, 0.6); /* Fond semi-transparent pour le footer */
+    padding: 10px 0;
+}
+
+footer a {
+    color: #00c6ff;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: #ff005c;
+}

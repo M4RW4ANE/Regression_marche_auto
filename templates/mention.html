@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mentions Légales - {{ app_name }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', path='style_mention.css') }}">
+</head>
+
+<body>
+    <!-- Bouton Précédent -->
+    <button class="back-button" onclick="window.history.back()">⬅ Précédent</button>
+
+    <header>
+        <div class="logo-container">
+            <img src="{{ url_for('static', path='om.png') }}" alt="Logo" class="logo">
+            <h1>{{ app_name }}</h1>
+        </div>
+    </header>
+
+    <main>
+        <h1>Mentions légales</h1>
+        <p>
+            Ceci est une page contenant les mentions légales.<br>
+            Éditeur du site : 4B INDUSTRY <br>
+            Adresse : 12 Avenue des Champs-Elysées, 75000 Paris <br>
+            Email : contact@exemple.com<br>
+            Téléphone : 01 23 45 67 89 <br>
+            Hébergeur : 4B INDUSTRY <br>
+            Adresse de l'hébergeur : 12 Avenue des Champs-Elysées, 75000 Paris  <br>
+            Droits et reproduction : Tout le contenu de ce site est protégé par le droit d’auteur.
+        </p>
+    </main>
+
+    <footer>
+        <p>Tout droits réservés</p>
+    </footer>
+</body>
+</html>

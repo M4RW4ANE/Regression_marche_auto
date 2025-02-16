@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ app_name }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', path='style_dashboard.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <!-- Bouton de déconnexion -->
+        <button class="logout-btn" onclick="window.location.href='/'">⬅ Déconnexion</button>
+
+        <div class="logo-container">
+            <img src="{{ url_for('static', path='om.png') }}" alt="Logo" class="logo">
+            <h1>4B INDUSTRY</h1>
+        </div>
+
+        <!-- Utilisateur connecté avec un rond vert -->
+        <div class="user-info">
+            <span class="status-circle"></span>
+            <span class="username">{{pseudo}} connecté</span>
+        </div>
+    </header>
+
+    <main>
+        <!-- Conteneur des filtres (Marque et Carburant) -->
+        <div class="filters">
+            <!-- Menu déroulant pour la marque -->
+            <select class="filter" id="marque">
+                <option value="marque1">1</option>
+                <option value="marque2"> 2</option>
+                <option value="marque3"> 3</option>
+                <option value="marque4"> 4</option>
+            </select>
+
+            <!-- Menu déroulant pour le carburant -->
+            <select class="filter" id="carburant">
+                <option value="essence">1</option>
+                <option value="diesel">2</option>
+                <option value="electrique">3</option>
+            </select>
+        </div>
+
+        <!-- Conteneur pour le menu déroulant "Année" (séparé pour un style spécifique) -->
+        <div class="filters-annee">
+            <select class="filter" id="annee">
+                <option value="2025">2025</option>
+                <option value="2024">2024</option>
+                <option value="2023">2023</option>
+                <option value="2022">2022</option>
+            </select>
+        </div>
+        
+        <div class="chart-container">
+            <canvas id="dynamicChart"></canvas> <!-- Utilisation de canvas pour le graphique -->
+        </div>
+
+        <!-- Bouton Prédire -->
+        <button class="predict-btn" onclick="window.location.href='/prediction'">Prédire</button>
+
+    </main>
+
+    <footer>
+        <p><a href="/mentions-legales">Mentions légales</a></p>
+    </footer>
+
+    <script>
+        // Données de base pour le graphique
+        const defaultData = {
+            labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul'],
+            datasets: [{
+                label: 'Prix',
+                data: [200, 220, 300, 280, 350, 400, 500],
+                backgroundColor: 'rgba(0, 198, 255, 0.3)',
+                borderColor: 'rgba(0, 198, 255, 1)',
+                borderWidth: 1
+            }]
+        };
+    
+        // Configuration du graphique
+        const config = {
+            type: 'line',  // Type de graphique : ligne
+            data: defaultData,
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        };
+    
+        // Création du graphique
+        const ctx = document.getElementById('dynamicChart').getContext('2d');
+        const dynamicChart = new Chart(ctx, config);
+    </script>
+
+    <script>
+        // Exemple de fonction pour récupérer et mettre à jour les données du graphique
+        function updateChartData() {
+            const annee = document.getElementById('annee').value;
+            const marque = document.getElementById('marque').value;
+            const carburant = document.getElementById('carburant').value;
+
+            // Ici, on met à jour les données du graphique en fonction des filtres sélectionnés
+            // Exemple de mise à jour des données (simule les données en fonction des sélections)
+            const updatedData = {
+                labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul'],
+                datasets: [{
+                    label: `${marque} - ${carburant} - ${annee} Prix`,
+                    data: generateMockData(marque, carburant, annee), // Génère les nouvelles données en fonction de la sélection
+                    backgroundColor: 'rgba(0, 198, 255, 0.3)',
+                    borderColor: 'rgba(0, 198, 255, 1)',
+                    borderWidth: 1
+                }]
+            };
+
+            // Met à jour les données du graphique
+            dynamicChart.data = updatedData;
+            dynamicChart.update();
+        }
+
+        // Fonction de génération de données fictives en fonction des sélections
+        function generateMockData(marque, carburant, annee) {
+            // Simulation des données (ici c'est aléatoire, mais tu peux les adapter)
+            return Array.from({ length: 7 }, () => Math.floor(Math.random() * 500) + 200);
+        }
+
+        // Ajouter des écouteurs d'événements pour chaque menu
+        document.getElementById('annee').addEventListener('change', updateChartData);
+        document.getElementById('marque').addEventListener('change', updateChartData);
+        document.getElementById('carburant').addEventListener('change', updateChartData);
+
+        // Initialiser avec les données par défaut
+        updateChartData();
+    </script>
+
+    
+</body>
+</html>
