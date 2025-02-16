@@ -34,11 +34,10 @@ header {
 }
 
 header img {
-    width: 200px;
+    width: 80px;
     height: auto;
     border-radius: 50%;
     box-shadow: 0 0 15px rgba(255, 255, 255, 0.7);
-    margin-top: 20px;
 }
 
 header h1 {
@@ -100,6 +99,27 @@ header h1 {
 }
 
 .logout-btn:hover {
+    transform: scale(1.1);
+    background-color: #ff005c;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.back-button-container button {
+    position: absolute;
+    top: 80px;
+    left: 20px;
+    padding: 10px 25px;
+    font-size: 1rem;
+    background-color: #00c6ff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+}
+
+.back-button-container button:hover {
     transform: scale(1.1);
     background-color: #ff005c;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);

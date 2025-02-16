@@ -37,7 +37,7 @@ header {
 
 /* Logo */
 header img {
-    width: 400px; /* Augmenté de 180px à 220px */
+    width: 200px; /* Augmenté de 180px à 220px */
     height: auto;
     border-radius: 50%;
     box-shadow: 0 0 15px rgba(255, 255, 255, 0.7);

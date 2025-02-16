@@ -7,10 +7,15 @@
     <link rel="stylesheet" href="{{ url_for('static', path='style_login.css') }}">
 </head>
 <body>
+    <!-- Bouton Précédent -->
+    <div class="back-button-container">
+        <button class="back-button" onclick="window.location.href='/'">⬅ Précédent</button>
+    </div>
+
     <!-- Header -->
     <header>
         <div class="logo-container">
-            <img src="{{ url_for('static', path='om.png') }}" alt="Logo" class="logo">
+            <img src="{{ url_for('static', path='dreamteam.png') }}" alt="Logo" class="logo">
             <h1>{{ app_name }}</h1>
         </div>
     </header>
@@ -26,7 +31,7 @@
                 <label for="password">Mot de passe</label>
                 <input type="password" id="password" name="password" placeholder="Entrez votre mot de passe" required>
                 
-                <button type="submit">Se connecter</button>
+                <button type="submit">Se connecter ➞</button>
             </form>
         </div>
     </main>

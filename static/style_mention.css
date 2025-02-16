@@ -45,10 +45,11 @@ header h1 {
     margin-bottom: 5px; /* Réduit l'espace sous le titre */
 }
 
-/* Logo */
-header .logo-container img {
-    width: 80px; /* Réduit la taille du logo */
-    height: auto; /* Assure que la hauteur reste proportionnelle */
+header img {
+    width: 80px;
+    height: auto;
+    border-radius: 50%;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.7);
 }
 
 /* Main */

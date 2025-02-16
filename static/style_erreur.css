@@ -30,8 +30,16 @@ header {
     align-items: center;
     justify-content: flex-start;
     text-align: center;
-    height: 30vh; /* Diminue la hauteur */
-    margin-top: 50px; /* Ajuste si besoin */
+    height: 15vh;
+    margin-top: 40px;
+    margin-bottom: 50px;
+}
+
+header img {
+    width: 80px;
+    height: auto;
+    border-radius: 50%;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.7);
 }
 
 header h1 {

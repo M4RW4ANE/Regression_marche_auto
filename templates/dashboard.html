@@ -14,10 +14,10 @@
     <!-- HEADER -->
     <header>
         <!-- Bouton de déconnexion -->
-        <button class="logout-btn" onclick="window.location.href='/'">⬅ Déconnexion</button>
+        <button class="logout-btn" onclick="window.location.href='/'">Déconnexion</button>
 
         <div class="logo-container">
-            <img src="{{ url_for('static', path='om.png') }}" alt="Logo" class="logo">
+            <img src="{{ url_for('static', path='dreamteam.png') }}" alt="Logo" class="logo">
             <h1>4B INDUSTRY</h1>
         </div>
 
@@ -29,40 +29,41 @@
     </header>
 
     <main>
-        <!-- Conteneur des filtres (Marque et Carburant) -->
         <div class="filters">
-            <!-- Menu déroulant pour la marque -->
+            <!-- Menu déroulant pour la marque avec un label non sélectionnable -->
             <select class="filter" id="marque">
+                <option value="" disabled selected>Marque</option> <!-- Label non sélectionnable -->
                 <option value="marque1">1</option>
-                <option value="marque2"> 2</option>
-                <option value="marque3"> 3</option>
-                <option value="marque4"> 4</option>
+                <option value="marque2">2</option>
+                <option value="marque3">3</option>
+                <option value="marque4">4</option>
             </select>
-
-            <!-- Menu déroulant pour le carburant -->
+        
+            <!-- Menu déroulant pour le carburant avec un label non sélectionnable -->
             <select class="filter" id="carburant">
+                <option value="" disabled selected>Modèle</option> <!-- Label non sélectionnable -->
                 <option value="essence">1</option>
                 <option value="diesel">2</option>
                 <option value="electrique">3</option>
             </select>
-        </div>
-
-        <!-- Conteneur pour le menu déroulant "Année" (séparé pour un style spécifique) -->
-        <div class="filters-annee">
+        
+            <!-- Menu déroulant pour l'année avec un label non sélectionnable -->
             <select class="filter" id="annee">
+                <option value="" disabled selected>Année</option> <!-- Label non sélectionnable -->
                 <option value="2025">2025</option>
                 <option value="2024">2024</option>
                 <option value="2023">2023</option>
                 <option value="2022">2022</option>
             </select>
         </div>
+             
         
         <div class="chart-container">
             <canvas id="dynamicChart"></canvas> <!-- Utilisation de canvas pour le graphique -->
         </div>
 
         <!-- Bouton Prédire -->
-        <button class="predict-btn" onclick="window.location.href='/prediction'">Prédire</button>
+        <button class="predict-btn" onclick="window.location.href='/prediction'">Page de prédiction ➞</button>
 
     </main>
 

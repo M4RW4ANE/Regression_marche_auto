@@ -34,11 +34,10 @@ header {
 }
 
 header img {
-    width: 200px;
+    width: 80px;
     height: auto;
     border-radius: 50%;
     box-shadow: 0 0 15px rgba(255, 255, 255, 0.7);
-    margin-top: 20px;
 }
 
 header h1 {
@@ -123,9 +122,16 @@ main {
     justify-content: center; /* Centre les filtres horizontalement */
     align-items: center; /* Centre les filtres verticalement */
     gap: 30px; /* Espacement entre les filtres */
-    margin-top: 50px; /* Ajuste la position des filtres plus bas */
+    margin-top: 10px; /* Ajuste la position des filtres plus bas */
     width: 100%;
     max-width: 800px; /* Limite la largeur des filtres pour plus de lisibilité */
+}
+
+label {
+    font-size: 1rem;
+    color: #333;
+    margin-bottom: 5px;
+    font-weight: bold;
 }
 
 /* Style des menus déroulants */
@@ -172,9 +178,9 @@ select:focus {
 .filters-annee {
     display: flex;
     justify-content: center; /* Centre le filtre "Année" horizontalement */
-    margin-top: 30px; /* Espacement entre les filtres Marque/Carburant et l'année */
-    width: 100%;
-    max-width: 800px; /* Garde la même largeur que les autres filtres */
+    margin-top: 10px; /* Espacement entre les filtres Marque/Carburant et l'année */
+    width: 200%;
+    max-width: 400px; /* Garde la même largeur que les autres filtres */
 }
 
 /* Élargir le menu déroulant "Année" */
@@ -192,13 +198,12 @@ select:focus {
 .chart-container {
     background-color: white;
     width: 95%; /* Augmenter la largeur à 95% pour prendre encore plus d'espace */
-    max-width: 1200px; /* Augmenter la largeur maximale */
+    max-width: 1400px; /* Augmenter la largeur maximale */
     margin: 30px auto; /* Centrer le graphique */
     padding: 30px; /* Plus de padding pour donner de l'espace autour du graphique */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    height: 700px; /* Augmenter encore la hauteur du graphique */
+    height: 1000px; /* Augmenter encore la hauteur du graphique */
 }
-
 
 /* Style du bouton "Prédire" */
 .predict-btn {

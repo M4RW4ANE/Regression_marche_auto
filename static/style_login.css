@@ -32,6 +32,7 @@ header {
     text-align: center;
     height: 15vh;
     margin-top: 40px;
+    margin-bottom: 50px;
 }
 
 header img {
@@ -42,10 +43,14 @@ header img {
 }
 
 header h1 {
-    font-size: 2rem;
-    color: white;
-    margin-top: 10px;
+    margin-top: 20px; /* Ajustement pour descendre un peu le texte */
+    font-size: 3rem;
+    font-weight: bold;
     text-transform: uppercase;
+    letter-spacing: 3px; /* Espacement des lettres légèrement augmenté */
+    color: #ffffff; /* Blanc lumineux */
+    text-shadow: 0 0 15px rgba(0, 198, 255, 0.8), 0 0 25px rgba(255, 0, 92, 0.8); /* Ombres dynamiques et colorées */
+    animation: glow 2s ease-in-out infinite; /* Animation d'halo lumineux */
 }
 
 /* Formulaire de connexion */
@@ -54,6 +59,27 @@ main {
     justify-content: center;
     align-items: center;
     height: 60vh;
+}
+
+.back-button-container button {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    background-color: #00c6ff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+}
+
+.back-button-container button:hover {
+    transform: scale(1.1);
+    background-color: #ff005c;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
 }
 
 .login-container {

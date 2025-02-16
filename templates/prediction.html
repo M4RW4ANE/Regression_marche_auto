@@ -12,10 +12,15 @@
     <!-- HEADER -->
     <header>
         <!-- Bouton de déconnexion -->
-        <button class="logout-btn" onclick="window.location.href='/'">⬅ Déconnexion</button>
+        <button class="logout-btn" onclick="window.location.href='/'">Déconnexion</button>
+
+        <!-- Bouton Précédent -->
+        <div class="back-button-container">
+            <button class="back-button" onclick="window.location.href='/dashboard'">⬅ Précédent</button>
+        </div>
 
         <div class="logo-container">
-            <img src="{{ url_for('static', path='om.png') }}" alt="Logo" class="logo">
+            <img src="{{ url_for('static', path='dreamteam.png') }}" alt="Logo" class="logo">
             <h1>4B INDUSTRY</h1>
         </div>
 
@@ -72,7 +77,7 @@
             </div>
     
             <!-- Bouton Prédire -->
-            <button class="predire-btn" onclick="window.location.href='/resultat'">Prédire</button>
+            <button class="predire-btn" onclick="window.location.href='/resultat'">Prédire ➞</button>
         </div>
     </main>
     
