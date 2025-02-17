@@ -5,9 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ app_name }}</title>
     <link rel="stylesheet" href="{{ url_for('static', path='styles.css') }}">
-
-    <!-- CDN pour Confetti -->
-    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.4.0/dist/confetti.browser.min.js"></script>
 </head>
 <body>
 
@@ -17,6 +14,7 @@
             <img src="{{ url_for('static', path='dreamteam.png') }}" alt="Logo" class="logo">
             <h1>4B INDUSTRY</h1>
         </div>
+
     </header>
 
     <!-- CONTENU PRINCIPAL -->
@@ -26,27 +24,13 @@
         <!-- Image de la voiture -->
         <img src="{{ url_for('static', path='voiture.jpg') }}" alt="Voiture" class="car-image">
 
-        <!-- Bouton avec l'effet de confetti au survol -->
-        <button onmouseover="playConfetti();" onclick="window.location.href='/login'">Page de connexion ➞</button>
+        <button onclick="window.location.href='/login'">Page de connexion ➞</button>
     </main>
 
     <!-- FOOTER -->
     <footer>
         <p><a href="/mentions-legales">Mentions légales</a></p>
     </footer>
-
-    <script>
-        // Fonction pour déclencher l'effet de confetti
-        function playConfetti() {
-            confetti({
-                particleCount: 100,   // Nombre de confettis
-                spread: 70,           // Dispersion
-                origin: { x: 0.5, y: 0.5 }, // Position du centre de l'effet
-                colors: ['#ff0000', '#00ff00', '#0000ff', '#ff9900', '#ff00ff'], // Couleurs des confettis
-                shapes: ['circle', 'square'], // Formes des confettis
-            });
-        }
-    </script>
-
+    
 </body>
 </html>
