@@ -12,10 +12,10 @@ import uvicorn
 app = FastAPI()
 
 # Configuration de Jinja2 pour les templates
-templates = Jinja2Templates(directory="templates")  # Modifie ici pour indiquer le bon chemin
+templates = Jinja2Templates(directory="app/templates")  # Modifie ici pour indiquer le bon chemin
 
 # Mount pour servir les fichiers statiques depuis le dossier "static"
-app.mount("/static", StaticFiles(directory="static"), name="static")
+app.mount("/static", StaticFiles(directory="app/static"), name="static")
 
 # Route principale qui renvoie une page HTML avec Jinja2
 @app.get("/", response_class=HTMLResponse)
